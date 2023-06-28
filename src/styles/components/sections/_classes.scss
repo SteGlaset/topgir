@@ -1,0 +1,13 @@
+@import '../variables';
+
+.classes__image {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (min-width: $md) {
+  .classes__image {
+    width: 75%;
+    margin-inline: auto;
+  }
+}

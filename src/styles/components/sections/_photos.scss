@@ -1,0 +1,44 @@
+@import '../variables';
+
+.photos__container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 10px;
+}
+
+.photos__box {
+  display: flex;
+  width: auto;
+  height: 280px;
+  position: relative;
+  justify-content: center;
+}
+
+.photos__image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: auto;
+  margin-inline: auto;
+}
+
+@media screen and (min-width: $md){
+  .photos__box {
+    padding: 10px;
+  }
+
+  .photos__image {
+    position: static;
+  }
+}
+
+@media screen and (min-width: $md) and (max-width: $lg) {
+  .photos__container {
+    max-width: 700px;
+  }
+
+  .photos__box {
+    height: 200px;
+  }
+}

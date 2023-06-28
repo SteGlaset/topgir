@@ -1,0 +1,26 @@
+section#studying
+    .container
+        h2.h2.text-center Учебные группы
+        p.studying__description Предлагаем на выбор 4 формата обучения на водительские права с удобным расписанием занятий
+        ul.groups__list.d-md-flex.flex-md-wrap
+            li.groups__item
+                h3.h3.groups__title.text-center Дневная группа
+                p.groups__time.text-center пн-вс
+                p.groups__time.text-center 10.00-15.30
+                img.groups__image(src=require("../../assets/images/study/car-1.webp") alt="" loading="lazy")
+            li.groups__item
+                h3.h3.groups__title.text-center Вечерняя группа
+                p.groups__time.text-center пн-вс
+                p.groups__time.text-center 19.00-21.30
+                img.groups__image(src=require("../../assets/images/study/car-2.webp") alt="" loading="lazy")
+            li.groups__item
+                h3.h3.groups__title.text-center Группа выходного дня
+                p.groups__time.text-center сб-вс
+                p.groups__time.text-center 11.00-15.30
+                img.groups__image(src=require("../../assets/images/study/car-3.webp") alt="" loading="lazy")
+            li.groups__item
+                h3.h3.groups__title.text-center Онлайн группа
+                p.groups__time.text-center Любые дни
+                p.groups__time.text-center Любое время
+                img.groups__image(src=require("../../assets/images/study/car-4.webp") alt="" loading="lazy")
+        +enrollModal('link_center link_red mt-5', 'Получить консультацию')

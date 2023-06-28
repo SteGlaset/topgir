@@ -1,0 +1,52 @@
+@import '../variables';
+
+.instructor__card {
+  border: 2px solid #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  padding: 40px 44px;
+  margin: 10px;
+}
+
+.instructor__image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.instructor__name {
+  margin-block: 8px 18px;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.instructor__line {
+  border-top: 1px solid rgba(254, 148, 6, 0.8);
+}
+
+.instructor__description {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+@media screen and (min-width: $md) {
+  .instructor__card {
+    width: 75%;
+    max-width: 751px;
+    margin-inline: auto;
+  }
+
+  .instructor__image {
+    margin-bottom: 0;
+  }
+
+  .instructor__image-box {
+    margin-right: 20px;
+    margin-block: auto;
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .instructor__image-box {
+    margin-right: 50px;
+  }
+}

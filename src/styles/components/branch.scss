@@ -1,0 +1,94 @@
+@import 'variables';
+@import 'sections/_studying';
+@import 'sections/_facts';
+@import 'sections/_classes';
+@import 'sections/_photos';
+@import 'sections/_reviews';
+@import 'sections/_faq';
+@import 'sections/_enroll';
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#header .social__item {
+  display: none !important;
+  background: #8D2404;
+}
+
+#branch {
+  background-size: contain;
+  padding: 40px 0 50px;
+
+  .branch__title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 4rem;
+  }
+  .branch-description {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+  }
+  .map {
+    overflow: hidden;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .25);
+    background-color: #FFF;
+    iframe {
+      width: 100%;
+    }
+  }
+  .contacts__li {
+    font-size: max(2rem, 14px);
+    color: #000;
+    margin-bottom: 20px;
+    &:nth-last-of-type(2) {
+      margin-bottom: 50px;
+    }
+  }
+  .contacts__icon {
+    width: 25px;
+    filter: brightness(0);
+    margin-right: 15px;
+  }
+  .contacts__link-wrapper {
+    margin: auto auto 0 auto;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.branch__enroll-box  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.branch__enroll-description {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.branch__link {
+  border-bottom: 1px solid transparent;
+  transition: .2s;
+  color: rgba(0, 0, 0, 0.7);
+  &:hover {
+    border-bottom: 2px solid #FC7101;
+    color: #000;
+  }
+}
+
+@media screen and (max-width: $md) {
+  #branch {
+    background-size: 50%;
+
+    .contacts__link-wrapper {
+      margin-bottom: 20px;
+    }
+  }
+};
