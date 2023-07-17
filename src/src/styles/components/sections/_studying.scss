@@ -1,0 +1,74 @@
+@import '../variables';
+
+#studying {
+  position: relative;
+  background: url(../../../assets/images/backgrounds/groups-bg.webp) no-repeat center 70px;
+  background-size: 339px auto;
+  z-index: 0;
+}
+
+.studying__description {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.groups__item {
+  position: relative;
+  background: #FFF center;
+  width: 260px;
+  height: 180px;
+  margin-inline: auto;
+  margin-bottom: 70px;
+  padding: 30px 20px;
+  &::before {
+    content: '';
+    background: linear-gradient(90deg, rgb(252, 113, 1), rgb(254, 232, 66));
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 280px;
+    height: 200px;
+    z-index: -1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.groups__title {
+  margin-bottom: 20px;
+}
+
+.groups__time {
+  position: relative;
+  width: 70%;
+  font-size: 1.6rem;
+  z-index: 1;
+}
+
+.groups__image {
+  position: relative;
+  width: 228px;
+  height: auto;
+  top: -20px;
+  right: -50px;
+}
+
+@media screen and (min-width: $lg) {
+  .groups__list {
+    width: 750px;
+    margin-inline: auto;
+  }
+
+  .groups__item {
+    width: 300px;
+    margin-bottom: 90px;
+    &::before {
+      width: 320px;
+    }
+  }
+
+  .groups__image {
+    right: -90px;
+  }
+}

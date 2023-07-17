@@ -1,0 +1,260 @@
+extends components/_base
+
+block variables
+    - navLinks[0].active = true
+
+block metrics
+    meta(name='yandex-verification' content='051cec8bd980865c')
+    // Google Tag Manager
+    script.
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PDB6TXB');
+    // End Google Tag Manager
+    script.
+        (function (a, m, o, c, r, m) {
+            a[m] = {
+                id: "241877",
+                hash: "3b7c1676cc54f37082543b44322f9c3cd158b3f348dc2cdd85bc8705be1b2324",
+                locale: "ru",
+                inline: false,
+                setMeta: function (p) {
+                    this.params = (this.params || []).concat([p])
+                }
+            };
+            a[o] = a[o] || function () {
+                (a[o].q = a[o].q || []).push(arguments)
+            };
+            var d = a.document, s = d.createElement('script');
+            s.async = true;
+            s.id = m + '_script';
+            s.src = 'https://gso.amocrm.ru/js/button.js?1687528452';
+            d.head && d.head.appendChild(s)
+        }(window, 0, 'amoSocialButton', 0, 0, 'amo_social_button'));
+    script(type='text/javascript').
+        !function () {
+            var t = document.createElement("script");
+            t.type = "text/javascript", t.async = !0, t.src = 'https://vk.com/js/api/openapi.js?169', t.onload = function () {
+                VK.Retargeting.Init("VK-RTRG-1758247-4iXWD"), VK.Retargeting.Hit()
+            }, document.head.appendChild(t)
+        }();
+
+block head
+    script(src=require("/src/js/index.js"), async)
+    link(href=require("styles/components/main.scss"), rel="stylesheet")
+    script(src='https://formdesigner.ru/js/widgets/popup.js?v=0.0.3')
+    title= title
+    meta(name='description', content= description)
+
+block body
+    // Yandex.Metrika counter
+    script.
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(91506274, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    noscript
+        div
+            img(src='https://mc.yandex.ru/watch/91506274' style='position:absolute; left:-9999px;' alt='')
+    // /Yandex.Metrika counter
+    // Google Tag Manager (noscript)
+    noscript
+        iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-PDB6TXB' height='0' width='0' style='display:none;visibility:hidden')
+    // End Google Tag Manager (noscript)
+    noscript
+        img(src='https://vk.com/rtrg?p=VK-RTRG-1758247-4iXWD', style='position:fixed; left:-999px;', alt='')
+
+block main
+    section#topgir
+        .container.topgir__container
+            .col-12.col-lg-5.h-100.d-flex.flex-column
+                h1.h1.h1_index.text-white Автошкола
+                    |
+                    span.topgir__title-name.text-red  TopGir
+                p.topgir__description.text-white Обучение вождению на категорию A и B в Москве: быстро, эффективно, рядом с вами
+                .topgir__enroll-box
+                    p.topgir__enroll-description Получите кешбэк на обучение до 10 000 рублей.
+                    p.topgir__enroll-description Отправьте заявку прямо сейчас
+                    +enrollModal('link_center link_red link_topgir', 'Отправить заявку')
+                ul.social-list.social-list__topgir.d-flex.d-lg-none
+                    li.social__item
+                        a.social__link(href=vk onclick="ym(91506274, 'reachGoal', 's_vk'); return true;")
+                            svg.social__icon(width='38' height='38' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                path(d='M18.7602 0C8.39957 0 0 8.39919 0 18.7602C0 29.1212 8.39957 37.5204 18.7602 37.5204C29.1208 37.5204 37.5204 29.1212 37.5204 18.7602C37.5204 8.39919 29.1208 0 18.7602 0ZM28.2764 20.7892C29.1507 21.6432 30.0758 22.447 30.8607 23.3893C31.2085 23.8062 31.5363 24.2372 31.7858 24.722C32.142 25.4133 31.8203 26.1714 31.2016 26.2124L27.3582 26.2117C26.3656 26.2938 25.5757 25.8935 24.9097 25.2148C24.3781 24.674 23.8848 24.0963 23.3728 23.5371C23.1636 23.3075 22.9433 23.0914 22.6807 22.9214C22.1568 22.5805 21.7016 22.685 21.4014 23.2323C21.0955 23.7893 21.0256 24.4065 20.9964 25.0264C20.9546 25.9326 20.6813 26.1695 19.772 26.2121C17.829 26.303 15.9854 26.0082 14.2719 25.0287C12.7604 24.1647 11.5904 22.9452 10.571 21.5645C8.58574 18.873 7.06535 15.919 5.69926 12.8801C5.3918 12.1958 5.61673 11.8296 6.37175 11.8154C7.62614 11.7912 8.88053 11.7943 10.1349 11.8142C10.6454 11.8223 10.9832 12.1144 11.1793 12.5961C11.8572 14.2639 12.6882 15.8507 13.7296 17.3223C14.0071 17.7142 14.2904 18.105 14.6938 18.3817C15.139 18.6873 15.4784 18.5863 15.6883 18.0892C15.8227 17.7733 15.8806 17.4356 15.9098 17.097C16.0096 15.9374 16.0215 14.7782 15.8488 13.6233C15.7413 12.9005 15.3348 12.4337 14.6143 12.2971C14.2474 12.2276 14.3011 12.0917 14.4796 11.8822C14.7894 11.5198 15.0795 11.2956 15.6595 11.2956L20.0019 11.2949C20.6863 11.4292 20.8398 11.7363 20.9327 12.4257L20.9366 17.2513C20.9285 17.5181 21.0705 18.3088 21.5496 18.4834C21.9334 18.6101 22.1867 18.3023 22.4163 18.0593C23.4576 16.9542 24.1996 15.6499 24.864 14.3C25.1573 13.7046 25.4102 13.0886 25.6559 12.4714C25.8386 12.015 26.1226 11.7904 26.6377 11.7981L30.8193 11.8031C30.9425 11.8031 31.0676 11.8042 31.1897 11.8253C31.8944 11.9459 32.0875 12.2491 31.8695 12.9366C31.5263 14.0167 30.8596 14.9164 30.2078 15.8184C29.5092 16.7842 28.7642 17.7161 28.0725 18.6861C27.4369 19.5728 27.4872 20.0192 28.2764 20.7892Z' fill='white' fill-opacity='0.7')
+                    li.social__item
+                        a.social__link.blink(href=whatsapp onclick="ym(91506274, 'reachGoal', 's_whatsapp'); return true;")
+                            svg.social__icon.whatsapp(width='512' height='512' x='0' y='0' viewBox='0 0 176 176' style='enable-background:new 0 0 512 512')
+                                g
+                                    g(data-name='Layer 2')
+                                        g(data-name='09.whatsapp')
+                                            path(d='m118.43 57.57-.22-.22a42.72 42.72 0 0 0-68.28 49.59l1.88 3.7-3.5 17-.05.22 16.89-4 3.85 1.95a42.78 42.78 0 0 0 49.22-8 42.72 42.72 0 0 0 .22-60.19zm-1.72 47.72c-2.07 3.26-5.34 7.24-9.45 8.23-7.2 1.75-18.25.06-32-12.75l-.17-.16C63 89.41 59.86 80.08 60.62 72.68c.42-4.21 3.92-8 6.87-10.49a3.94 3.94 0 0 1 6.15 1.41l4.45 10.06a3.89 3.89 0 0 1-.49 4l-2.25 2.92a3.88 3.88 0 0 0-.35 4.27c1.26 2.2 4.28 5.45 7.63 8.47 3.76 3.39 7.93 6.5 10.57 7.57a3.85 3.85 0 0 0 4.19-.89l2.61-2.63a4 4 0 0 1 3.9-1l10.57 3a4 4 0 0 1 2.24 5.92z' fill-opacity='0.7' fill='#FFF' data-original='#000000')
+                                            path(d='M88 0a88 88 0 1 0 88 88A88 88 0 0 0 88 0zm54.53 89.3a54.57 54.57 0 0 1-78.82 47.11l-27.55 6.53a2.13 2.13 0 0 1-2.24-.87 2.09 2.09 0 0 1-.33-1.63l5.79-28.11a54.56 54.56 0 1 1 103.15-23z' fill-opacity='0.7' fill='#FFF' data-original='#000000')
+    section#about
+        .container
+            h2.about__description
+                span.about__description_gradient TopGir
+                |  — одна из лучших автошкол Москвы с онлайн и офлайн обучением.
+    include components/sections/_facts
+    include components/sections/_studying
+    include components/sections/_classes
+    include components/sections/_instructors
+    section#autopark
+        .container
+            h2.h2.text-center Автопарк
+            p.autopark__description Только посмотрите, на каких комфортных машинах вам предстоит учиться вождению! Каждое авто полностью обслужено и застраховано. Обновляем автопарк каждые 3 года
+            #autopark__carousel.carousel.slide(data-bs-ride='carousel')
+                .carousel-inner.facts__list
+                    each car, i in autopark
+                        .carousel-item(class= i ? '' : 'active')
+                            .autopark__item
+                                img.autopark__image(src=require(car.imageSrc) alt='Автомобиль')
+                                div
+                                    p.autopark__kpp= car.kpp
+                                    p.autopark__title= car.title
+                button.carousel-control-prev.d-none.d-md-block(type='button', data-bs-target='#autopark__carousel', data-bs-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                        svg(width='21' height='59' viewBox='0 0 21 59' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M19.411 1L0.999958 29.5' stroke='#878787' stroke-width='2')
+                            path(d='M0.999878 29L19.4109 57.5' stroke='#878787' stroke-width='2')
+                    span.visually-hidden Предыдущий
+                button.carousel-control-next.d-none.d-md-block(type='button', data-bs-target='#autopark__carousel', data-bs-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                        svg(width='21' height='59' viewBox='0 0 21 59' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M1.58899 1L20 29.5' stroke='#878787' stroke-width='2')
+                            path(d='M20.0001 29L1.58907 57.5' stroke='#878787' stroke-width='2')
+                    span.visually-hidden Следующий
+    section#prices
+        .container
+            h2.h2.text-center Цены
+            ul.prices__list.d-flex.flex-wrap.justify-content-around
+                each price in prices
+                    li.prices__item
+                        h3.prices__h3.h3.text-center= price.title
+                        h4.prices__h4.h4.text-center Цены
+                        ul.price__list
+                            if price.price
+                                li.price__item.d-flex.justify-content-between
+                                    p.price__description Итого:
+                                    p.price__total= price.price
+                            else
+                                li.price__item.d-flex.justify-content-between
+                                    p.price__description 20 часов*:
+                                    p.price__total= price["20"]
+                                li.price__item.d-flex.justify-content-between
+                                    p.price__description 40 часов*:
+                                    p.price__total= price["40"]
+                                li.price__item.d-flex.justify-content-between
+                                    p.price__description 56 часов*:
+                                    p.price__total= price["56"]
+                            li.price__item.d-flex.justify-content-between
+                                p.price__description Первый взнос:
+                                p.price__total= price.downPayment
+            .prices__description.text-center * В академических часах
+            .prices__description.text-center ** Можно разбить: 12000 ₽ сразу + 5000 ₽ через 2 недели
+            h2.h2.text-center.mt-5 Дополнительный накат
+            ul.prices__list.d-flex.flex-wrap.justify-content-around
+                each course in overrun
+                    li.prices__item.d-flex.flex-column
+                        h2.prices__h3.h2.text-center= course.title
+                        ul.price__list.mb-5
+                            each feature in course.features
+                                li.price__item.d-flex.justify-content-between.mb-3
+                                    p.price__description= feature
+                        .d-flex.justify-content-between.mt-auto
+                            p.price__description.fs-3 Стоимость:
+                            p.price__total.fw-bold.fs-2= course.price
+    section#actions.bg_orange-gradient
+        .container.actions__box
+            div.action__text-box
+                h2.h2.text-red.text-center АКЦИИ!
+                p.actions__description.text-white Хотите подешевле нанять инструктора по вождению для дополнительных занятий или интересует возможность снижения стоимости обучения в автошколе ТопГир? Мы регулярно устраиваем акции и скидки.
+                p.actions__description.text-white Не пропустите самые выгодные предложения!
+            #actions__carousel.carousel.slide(data-bs-ride='carousel')
+                .carousel-inner.actions__carousel-inner
+                    each action, i in actions
+                        .carousel-item(class= i ? '' : 'active')
+                            img.actions__image(src=require(action) alt='Фотография')
+                .carousel-indicators
+                    each _, i in actions
+                        button(class= i ? '' : 'active' type='button' data-bs-target='#actions__carousel' data-bs-slide-to=i aria-current='true' aria-label=`Слайд ${i}`)
+                button.carousel-control-prev.d-none.d-md-block(type='button', data-bs-target='#actions__carousel', data-bs-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                        svg(width='21' height='59' viewBox='0 0 21 59' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M20.0362 1L0.999929 29.5' stroke='white' stroke-width='2')
+                            path(d='M1.00009 29L20.0364 57.5' stroke='white' stroke-width='2')
+                    span.visually-hidden Предыдущий
+                button.carousel-control-next.d-none.d-md-block(type='button', data-bs-target='#actions__carousel', data-bs-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                        svg(width='21' height='59' viewBox='0 0 21 59' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M0.963806 1L20.0001 29.5' stroke='white' stroke-width='2')
+                            path(d='M19.9999 29L0.963644 57.5' stroke='white' stroke-width='2')
+                    span.visually-hidden Следующий
+            +enrollModal('link_center link_red actions__link', 'Получить скидку')
+    .section#formats
+        .container
+            p.formats__description Для изучения теории предлагаем два удобных формата обучения на права: онлайн и в классах. Практические занятия как для получения прав категории А, так и категории Б проходят на оборудованных автодромах и в городе по маршрутам ГИБДД.
+    section#branches
+        .container
+            h2.h2.text-center Выбрать ближайший филиал вы можете на карте:
+            .branches__map-box
+                iframe.branches__map(src='https://yandex.ru/map-widget/v1/?um=constructor%3Acc26fe429db5838afc6845b984e4447a75603d8b01d902556e17c0c3607e375e&amp;source=constructor' loading="lazy" height='400')
+            h2.h2.text-center Адреса школ
+            ul.branches__list
+                each branch in branches
+                    li.branches__item
+                        a.branches__link(href=`branches/${branch.href}`)= branch.name
+    include components/sections/_photos
+    .reviews-n-faq
+        include components/sections/_reviews
+        include components/sections/_faq
+    section#about-2
+        .container
+            p.about-2__head Добро пожаловать в одну из лучших автошкол в Москве - "ТопГир". Здесь профессиональные инструкторы и опытные преподаватели научат вас вождению, как начинающего, так и опытного водителя. В этом тексте мы расскажем о качестве обучения, преподавателях, инструкторах, автомобилях, просторных и оборудованных классах, достоинствах, рекомендациях и том, что здесь вы научитесь вождению лучше всех.
+            .about-2-box
+                h3.about-2__title О качестве обучения:
+                p.about-2__description В "ТопГир" вы получите качественное обучение, которое соответствует требованиям ГИБДД России. Курс обучения состоит из теоретической и практической частей, которые проходят в соответствии с ГОСТ Р 12.0.005-2009 "Основные требования к организациям, осуществляющим подготовку водителей транспортных средств". Практическая часть обучения включает в себя городские и загородные маршруты, так что вы получите опыт вождения в различных условиях.
+            .about-2-box
+                h3.about-2__title Преподаватели:
+                p.about-2__description В автошколе "ТопГир" работают только опытные и квалифицированные преподаватели, которые прошли обязательную сертификацию в соответствии с требованиями ГИБДД России. Они помогут вам освоить теорию и практическую часть вождения, а также подготовят вас к экзаменам.
+            .about-2-box
+                h3.about-2__title Инструкторы:
+                p.about-2__description В "ТопГир" работают только профессиональные инструкторы, которые имеют большой опыт работы на автомобиле и знают все тонкости управления автомобилем. Инструкторы научат вас не только правильно управлять машиной, но и ориентироваться на дороге, принимать правильные решения в экстремальных ситуациях и многое другое.
+            .about-2-box
+                h3.about-2__title Автомобили:
+                p.about-2__description В автошколе "ТопГир" используются только новые и современные автомобили, оснащенные всем необходимым оборудованием для безопасного обучения. Автомобили регулярно проходят технический осмотр и находятся в отличном техническом состоянии.
+            .about-2-box
+                h3.about-2__title Просторные и оборудованные классы:
+                p.about-2__description Школа "ТопГир" имеет просторные и оборудованные классы, которые создают комфортные условия для обучения теории вождения. Здесь вы найдете все необходимое оборудование для обучения, включая мультимедийные проекторы, интерактивные доски, учебники и многое другое.
+            .about-2-box
+                h3.about-2__title Достоинства "ТопГир":
+                p.about-2__description Автошкола "ТопГир" - это одна из лучших автошкол в Москве. Она предоставляет высокое качество обучения, опытных преподавателей и инструкторов, современную технику, безопасные автомобили, просторные и оборудованные классы, а также доступные цены. "ТопГир" является одной из самых рекомендуемых автошкол в Москве.
+    include components/sections/_enroll
+
+
+
+

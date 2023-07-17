@@ -1,0 +1,23 @@
+section#classes.bg_orange-gradient
+    .container
+        h2.h2.text-red.text-center Классы
+        #carousel__classes.carousel.slide.carousel-fade(data-bs-ride='carousel')
+            .carousel-inner
+                each classroom, i in classes
+                    .carousel-item(class= i ? '' : 'active')
+                        img.classes__image(src=require('../../' + classroom) alt=`Класс ${i + 1}` loading="lazy")
+            .carousel-indicators
+                each _, i in classes
+                    button(class= i ? '' : 'active' type='button' data-bs-target='#carousel__classes' data-bs-slide-to=i aria-current='true' aria-label=`Слайд ${i}`)
+            button.carousel-control-prev.d-none.d-md-block(type='button', data-bs-target='#carousel__classes', data-bs-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                    svg(width='21' height='59' viewBox='0 0 21 59' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M20.0362 1L0.999929 29.5' stroke='white' stroke-width='2')
+                        path(d='M1.00009 29L20.0364 57.5' stroke='white' stroke-width='2')
+                span.visually-hidden Предыдущий
+            button.carousel-control-next.d-none.d-md-block(type='button', data-bs-target='#carousel__classes', data-bs-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                    svg(width='21' height='59' viewBox='0 0 21 59' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M0.963806 1L20.0001 29.5' stroke='white' stroke-width='2')
+                        path(d='M19.9999 29L0.963644 57.5' stroke='white' stroke-width='2')
+                span.visually-hidden Следующий

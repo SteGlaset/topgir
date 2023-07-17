@@ -1,0 +1,10 @@
+section#faq
+    .container
+        h2.h2.text-center Часто задаваемые вопросы
+        #accordionFaq.accordion.accordion-flush.faq__list
+            each item, i in faq
+                .accordion-item.faq__item
+                    h4.accordion-header(id=`faq-heading-${i}`)
+                        button.accordion-button.collapsed.faq__title.h4(type='button', data-bs-toggle='collapse', data-bs-target=`#faq-collapse-${i}`, aria-expanded='false', aria-controls=`faq-collapse-${i}`)= item.question
+                    .accordion-collapse.collapse(id=`faq-collapse-${i}` aria-labelledby=`faq-heading-${i}`)
+                        .accordion-body.faq__answer= item.answer
