@@ -10,7 +10,8 @@ footer#footer
                         a.footer__link(href=link.href)= link.name
             li.footer__item.footer__item_3
                 p Адрес: улица Бориса Галушкина, 18
-                p= workTime
+                p= workDaysSchedule
+                p= weekendsSchedule
                 p
                     a.footer__link(href=`tel:${phone.notFormatted}` onclick="ym(91506274, 'reachGoal', 's_telephone'); return true;")= phone.formatted
                 p
