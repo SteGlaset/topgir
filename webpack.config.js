@@ -72,14 +72,13 @@ module.exports = {
         ]
     },
     devServer: {
+        open: true,
         static: {
-            directory: path.join(__dirname, 'dist'),
-            serveIndex: true
+            directory: './src',
+            watch: true
         },
-        watchFiles: ['dist/**/*'],
-        liveReload: true,
         compress: true,
-        hot: true
+        port: 9000,
     },
     performance: {
         hints: false

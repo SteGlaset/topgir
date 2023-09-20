@@ -52,9 +52,11 @@ block metrics
 block head
     script(src=require("/src/js/index.js"), async)
     link(href=require("styles/components/main.scss"), rel="stylesheet")
-    script(src='https://formdesigner.ru/js/widgets/popup.js?v=0.0.3')
+    script(src='https://formdesigner.ru/js/widgets/popup.js?v=0.0.3' async)
     title= title
     meta(name='description', content= description)
+    script(src='https://cdn.proffskills.ru/static/js/autoschool/autoschoolInfoUpdating.js' defer)
+
 
 block body
     // Yandex.Metrika counter
@@ -90,13 +92,16 @@ block body
         img(src='https://vk.com/rtrg?p=VK-RTRG-1758247-4iXWD', style='position:fixed; left:-999px;', alt='')
 
 block main
+    noscript
+        div(style='color: red; position: fixed; bottom: 5px; left: 5px; z-index: 999') JavaScript отключен, информация на сайте может быть неполной
     section#topgir
         .container.topgir__container
             .col-12.col-lg-5.h-100.d-flex.flex-column
-                h1.h1.h1_index.text-white Автошкола
+                h2.h1.h1_index.text-white Автошкола
                     |
                     span.topgir__title-name.text-red  TopGir
-                p.topgir__description.text-white Обучение вождению на категорию A и B в Москве: быстро, эффективно, рядом с вами
+                p
+                    h1.topgir__description.text-white Обучение вождению в Москве с гарантией качества в автошколе за 3 месяца!
                 .topgir__enroll-box
                     p.topgir__enroll-description Получите кешбэк на обучение до 10 000 рублей.
                     p.topgir__enroll-description Отправьте заявку прямо сейчас
@@ -160,20 +165,23 @@ block main
                             if price.price
                                 li.price__item.d-flex.justify-content-between
                                     p.price__description Итого:
-                                    p.price__total= price.price
+                                    p.price__totall.auto-param(data-type='price' data-key=price.price data-format=' ₽') ...
+                                li.price__item.d-flex.justify-content-between
+                                    p.price__description Первый взнос:
+                                    p.price__total.auto-param(data-type='installment' data-key=price.price data-format=' ₽') ...
                             else
                                 li.price__item.d-flex.justify-content-between
                                     p.price__description 20 часов*:
-                                    p.price__total= price["20"]
+                                    p.price__total.auto-param(data-type='price' data-key=price[20] data-format=' ₽') ...
                                 li.price__item.d-flex.justify-content-between
                                     p.price__description 40 часов*:
-                                    p.price__total= price["40"]
+                                    p.price__total.auto-param(data-type='price' data-key=price[40] data-format=' ₽') ...
                                 li.price__item.d-flex.justify-content-between
                                     p.price__description 56 часов*:
-                                    p.price__total= price["56"]
-                            li.price__item.d-flex.justify-content-between
-                                p.price__description Первый взнос:
-                                p.price__total= price.downPayment
+                                    p.price__total.auto-param(data-type='price' data-key=price[56] data-format=' ₽') ...
+                                li.price__item.d-flex.justify-content-between
+                                    p.price__description Первый взнос:
+                                    p.price__total.auto-param(data-type='installment' data-key=price[20] || price.price data-format=' ₽**') ...
             .prices__description.text-center * В академических часах
             .prices__description.text-center ** Можно разбить: 12000 ₽ сразу + 5000 ₽ через 2 недели
             h2.h2.text-center.mt-5 Дополнительный накат
@@ -187,7 +195,7 @@ block main
                                     p.price__description= feature
                         .d-flex.justify-content-between.mt-auto
                             p.price__description.fs-3 Стоимость:
-                            p.price__total.fw-bold.fs-2= course.price
+                            p.price__total.fw-bold.fs-2.auto-param(data-type='overrun' data-key=course.pack data-format=' ₽') ...
     section#actions.bg_orange-gradient
         .container.actions__box
             div.action__text-box
